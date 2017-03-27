@@ -2,18 +2,21 @@
 	<head>
 	</head>
 	<body>
-		<h3>I'm working</h3>
-		<form action="/quotes" method="POST">
-  <input type="text" placeholder="name" name="name">
-  <input type="text" placeholder="quote" name="quote">
+		<h3>Send message</h3>
+		<form action="/messages" method="POST">
+  <input type="text" placeholder="User" name="user">
+  <input type="text" placeholder="Message" name="message">
   <button type="submit">Submit</button>
 </form>
 
-<ul class="quotes">
-  <% for(var i=0; i<quotes.length; i++) {%>
-    <li class="quote">
-      <span><%= quotes[i].name %></span>
-      <span><%= quotes[i].quote %></span>
+<ul class="messages">
+  <% for(var i=0; i<messages.length; i++) {%>
+    <li class="messages">
+      <span>User: <%= messages[i].user %></span><br>
+      <p>
+      <span> Message: <%= messages[i].message %></span>
+    </p>
+    <br>
     </li>
   <% } %>
 </ul>
