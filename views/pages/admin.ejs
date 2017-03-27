@@ -2,12 +2,26 @@
 	<head>
 	</head>
 	<body>
-		<h3>Holy message removal tool</h3>
-<form action="/banhammer" method="post">
+
+
+<h3>Messages</h3>
+<!--
 <ul class="messages">
   <% for(var i=0; i<messages.length; i++) { %>
     <li class="messages">
-      <span>User: <%= messages[i].user %></span><input type="checkbox" name= "<%= innerHTML = i %>" value="message"><br>
+      <span>User: <%= messages[i].user %></span><input type="checkbox" name="<%=innerHTML = messages[i]._id %>"><br>
+      <p>
+      <span> Message: <%= messages[i].message %></span>
+    </p>
+    <br>
+    </li>
+  <% } %>
+</ul>
+-->
+<ul class="messages">
+  <% for(var i=0; i<messages.length; i++) { %>
+    <li class="messages">
+      <span>User: <%= messages[i].user %></span><br>
       <p>
       <span> Message: <%= messages[i].message %></span>
     </p>
@@ -16,7 +30,12 @@
   <% } %>
 </ul>
 
-  <button type="submit">Deed is done</button>
+<h3>Are you sure you want destroy all messages?<h3>
+<form action="/banhammer" method="POST">
+  <button type="submit">Destroy all</button>
+</form>
+<form action="/">
+  <button type="submit">Not sure</button>
 </form>
 	</body>
 </html>
