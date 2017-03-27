@@ -29,6 +29,13 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get('/admin', (req, res) => {
+  db.collection('messages').find().toArray((err, result) => {
+    if (err) return console.log(err);
+    res.render('pages/admin.ejs', {messages: result})
+  })
+})
+
 app.post('/messages', (req, res) => {
   db.collection('messages').save(req.body, (err, result) => {
   if (err) return console.log(err);

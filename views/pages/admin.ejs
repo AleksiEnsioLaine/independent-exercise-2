@@ -1,0 +1,22 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h3>Holy message removal tool</h3>
+<form action="/banhammer" method="post">
+<ul class="messages">
+  <% for(var i=0; i<messages.length; i++) { %>
+    <li class="messages">
+      <span>User: <%= messages[i].user %></span><input type="checkbox" name= "<%= innerHTML = i %>" value="message"><br>
+      <p>
+      <span> Message: <%= messages[i].message %></span>
+    </p>
+    <br>
+    </li>
+  <% } %>
+</ul>
+
+  <button type="submit">Deed is done</button>
+</form>
+	</body>
+</html>
